@@ -1,0 +1,19 @@
+﻿  domashka_geom.cpp
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(59,53): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(59,53): warning C4244:         with
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(59,53): warning C4244:         [
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(59,53): warning C4244:             T=float
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(59,53): warning C4244:         ]
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(61,30): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(68,53): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(68,53): warning C4244:         with
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(68,53): warning C4244:         [
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(68,53): warning C4244:             T=float
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(68,53): warning C4244:         ]
+D:\project\domashka_geom\domashka_geom\source\domashka_geom.cpp(71,70): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Создание кода
+  1 of 5 functions (20.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  domashka_geom.vcxproj -> D:\project\domashka_geom\x64\Release\domashka_geom.exe
