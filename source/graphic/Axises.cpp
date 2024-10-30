@@ -1,5 +1,5 @@
 #include "Axises.h"
-
+#include <iostream>
 Axises::Axises(const int& width, const int& height)
     :
     width(width),
@@ -24,6 +24,7 @@ Axises::Axises(const int& width, const int& height)
     // step and size
     tickSpacing = 50;
     tickSize = 10;
+    scale = 1.0f;
 }
 
 void Axises::drawTicks(sf::RenderWindow& window)
@@ -49,16 +50,26 @@ void Axises::drawTicks(sf::RenderWindow& window)
 }
 void Axises::moveCamera()
 {
+    float deltaTime = clock.getElapsedTime().asMicroseconds();
+    clock.restart();
+    deltaTime = deltaTime / 800;
     // moving camera
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) moveYAxis(getMoveSpeed());
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) moveYAxis(-(getMoveSpeed()));
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) moveXAxis(getMoveSpeed());
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) moveXAxis(-(getMoveSpeed()));
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) moveYAxis(getMoveSpeed() * deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) moveYAxis(-(getMoveSpeed() * deltaTime));
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) moveXAxis(getMoveSpeed() * deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) moveXAxis(-(getMoveSpeed() * deltaTime));
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+        setScale(getScale() + 0.01f);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        setScale(getScale() - 0.01f);
+    }
+
 
     // Обновляем позицию осей с учетом смещения
     getXAxis().setPosition(0, getOrigin().y + getOffset().y);
     getYAxis().setPosition(getOrigin().x + getOffset().x, 0);
-
 }
 
 void Axises::moveYAxis(float delta)
@@ -104,4 +115,12 @@ void Axises::setXAxisPosition(sf::Vector2f& position)
 void Axises::setYAxisPosition(sf::Vector2f& position)
 {
     Axises::yAxis.setPosition(position);
+}
+void Axises::setScale(float newScale)
+{
+    Axises::scale = newScale;
+}
+float Axises::getScale()
+{
+    return Axises::scale;
 }

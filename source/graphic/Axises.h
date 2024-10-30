@@ -1,8 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-
-
 class Axises
 {
 	int width;
@@ -12,11 +10,13 @@ class Axises
 	sf::Vector2f offset;
 
 	float moveSpeed;
+	float scale;
 
 	sf::RectangleShape xAxis;
 	sf::RectangleShape yAxis;
 	int tickSpacing;
 	int tickSize;
+	sf::Clock clock;
 public:
 	Axises(const int& width, const int& height);
 	void moveYAxis(float delta);
@@ -31,8 +31,10 @@ public: // getters
 	sf::Vector2f& getOffset();
 	int getTickSpacing();
 	int getTickSize();
+	float getScale();
 public: // setters
 	void setXAxisPosition(sf::Vector2f& position);
 	void setYAxisPosition(sf::Vector2f& position);
+	void setScale(float newScale);
 };
 
