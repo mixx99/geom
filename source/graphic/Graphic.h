@@ -10,4 +10,6 @@ public:
 	void drawHyperbolaForX(Axises& axises, sf::RenderWindow& window, float k);
 	void drawLineForX(Axises& axises, sf::RenderWindow& window, float k, float b);
 	void DrawMyGraphic(Axises& axises, sf::RenderWindow& window);
+	void drawCanonParabola(Axises& axises, sf::RenderWindow& window, float& p);
+	void drawSecretGraph(Axises& axises, sf::RenderWindow& window);
 };
